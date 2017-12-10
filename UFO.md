@@ -4,7 +4,7 @@
 
 Nginx er en kraftfuld open source software til Web Serving, Load Balancing, Media Streaming, Caching og meget mere. Nginx startede som en web-server designet til maksimal stabilitet og ydeevne. Ud over sine HTTP-serverfunktioner kan Nginx også fungere som en proxyserver til e-mail (IMAP, POP3 og SMTP) og en Load Balancer og reverse proxy til HTTP- og TCP-servere. 
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/nginx.png)
 
 
 Nginx blev oprindeligt udviklet til at være den hurtigste webserver, og dette formål er stadig et centralt mål for Nginx. Den slår Apache og andre server i benchmarks der måler web-serverens ydeevne. 
@@ -57,7 +57,7 @@ Server: nginx/1.3.6 (Ubuntu)
 
 Ovenstående output viser navnet på vores operative system og versionen på vores Nginx web-server. Ondsindede hackere kan bruge denne information til at undersøge vores operative system og planlægge deres angreb. Derfor er det vigtigt at vi konfigurere vores Nginx, så disse oplysninger ikke offentliggøres
 
-Start med at navigere hen til din Nginx konfigurations som ligger i følgende sti: `/etc/nginx/nginx.conf/`.Herefter kan du gøre brug af nedenstående kommando til at åbne Nano editor, så du kan skrive i filen. 
+Start med at navigere hen til din Nginx konfiguration som ligger i følgende sti: `/etc/nginx/nginx.conf/`.Herefter kan du gøre brug af nedenstående kommando til at åbne Nano editor, så du kan skrive i filen. 
 
 ```
 $ sudo nano /etc/nginx/nginx.conf
@@ -94,9 +94,9 @@ Server: nginx
 X-Powered-By: PHP/7.1-1ubuntu4.14
 ```
 
-Hackere kan drage fordel af denne information ved at undersøge allerede eksisterende sikkerhedshuller i de versioner vi har installeret på vores system. Det er vigtigt at skjule disse oplysninger, og dette gøre ved at skrive `expose_php off` i din `php.ini` fil. 
+Hackere kan drage fordel af denne information ved at undersøge allerede eksisterende sikkerhedshuller i de versioner vi har installeret på vores system. Det er vigtigt at skjule disse oplysninger, og dette gøres ved at skrive `expose_php off` i din `php.ini` fil. 
 
-Næste vigtige ændringer er vores ”error pages”, såsom 401, 403 og 404. For at ændre disse skal du navigere til denne sti: `/etc/nginx/sites-enabled/defualt`. Herefter skal du tilføje følgende linje kode i server konfigurationen. 
+Næste vigtige ændringer er vores ”error pages”, såsom `401`, `403` og `404`. For at ændre disse skal du navigere til denne sti: `/etc/nginx/sites-enabled/defualt`. Herefter skal du tilføje følgende linje kode i server konfigurationen. 
 
 ```
 server {
@@ -114,11 +114,11 @@ $ sudo service nginx reload
 
 Sikkerhed handler ikke altid om, at have lange og komplicerede passwords. Man skal også prøve at holde de følsomme områder af sin webside væk fra ondsindede hackere. 
 
-De sårbare områder såsom admin pages, CPanel og andre sider kan nemt tilgås og udnyttes af hackere for at få adgang til din webside. Hvis man har en svag adgangskode, kan adgangskoden nemt knækkes af hackere, som har en del værktøjer til at knække koder. Dette kunne være et brute force angreb, hvor hackerne prøver at knække adgangskoden, ved at der afprøves forskellige kode kombinationer indtil den rigtige kode er fundet. Der er en del værktøjer, som hackere har for at udføre et brute force angreb, Hydra er det mest kendte og effektive værktøj. 
+De sårbare områder såsom admin pages, CPanel og andre sider kan nemt tilgås og udnyttes af hackere for at få adgang til din webside. Hvis man har en svag adgangskode, kan adgangskoden nemt knækkes af hackere, som har en del værktøjer til at knække koder. Dette kunne være et brute force angreb, hvor hackerne prøver at knække adgangskoden, ved at der afprøves forskellige kode kombinationer indtil den rigtige kode er fundet. Der er en del værktøjer, som hackere gøre brug af for at udføre et brute force angreb, Hydra er det mest kendte og effektive værktøj. 
 
 Udover at kunne oprette en lang og kompliceret kode som både indeholder tal, små-, store bogstaver, og tegn kan man også begrænse IP addresser for at få adgang til den specifikke side man vil beskytte.
 
-Man kan angive de betroede IP addresser som eksempelvis din egen eller andre administratorer der skal kunne tilgå siden og have adgang. Her kan man så blokere alle andre IP’er fra at få adgang til siden. Dette gør, at din admin page kun kan tilgås adgang fra de IP addresser du stoler på og kender.
+Man kan angive de betroede IP addresser som eksempelvis din egen eller andre administratorer der skal kunne tilgå siden og have adgang. Her kan man så blokere alle andre IP’er fra at få adgang til siden. Dette medførere at din admin page kun kan tilgås fra de IP addresser du stoler på og kender.
 
 Du kan tilføje og fjerne IP addresser ved at aktivere IP Restriction via Nginx configuration. Dette gøres ved at åbne Nginx configiration:
 
@@ -147,7 +147,7 @@ For at ændringerne træder i kraft, skal du genindlæse Nginx ved at skrive ned
 $ sudo service nginx reload 
 ```
 
-Når man nu prøver at tilgå admin page fra en IP addresse som ikke er iblandt IP Adresserne der skal have adgang, vil man få en 402 forbidden error. 
+Når man nu prøver at tilgå admin page fra en IP addresse som ikke er iblandt IP Adresserne der skal have adgang, vil man få en `402 forbidden error`. 
 
 ## Step 4 - Sikkerhedsrevision
 
@@ -158,4 +158,5 @@ Vi anbefaler at du laver en sikkerhedsrevision, som er en systematisk evaluering
 Det er svært at forebygge og forhindre ondsindede hacker angreb, men efter at have læst denne artikel håber vi at du føler dig mere sikker når det kommer til sikkerheden i Nginx. Som sagt har ethvert software system sikkerhedshuller og svagheder, derfor er det vigtigt at du løbende øger sikkerheden ved at opdatere og konfigurere.  
 
 
+## Kilder
 
