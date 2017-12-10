@@ -1,5 +1,7 @@
 # 4 simple måder at øge sikkerheden på din Nginx Server
 
+_Skrevet af Kevin Turan & Mustafa Hakimi_
+
 ## Hvad er Nginx
 
 Nginx er en kraftfuld open source software til Web Serving, Load Balancing, Media Streaming, Caching og meget mere. Nginx startede som en web-server designet til maksimal stabilitet og ydeevne. Ud over sine HTTP-serverfunktioner kan Nginx også fungere som en proxyserver til e-mail (IMAP, POP3 og SMTP) og en Load Balancer og reverse proxy til HTTP- og TCP-servere. 
