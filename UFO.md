@@ -172,6 +172,8 @@ https://www.keycdn.com/blog/http-security-headers/
 
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04
 
+https://www.upguard.com/articles/10-tips-for-securing-your-nginx-deployment 
+
 https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html 
 
 http://smallbusiness.chron.com/difference-between-internal-external-threats-database-74165.html
