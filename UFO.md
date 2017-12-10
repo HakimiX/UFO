@@ -160,4 +160,25 @@ Det er svært at forebygge og forhindre ondsindede hacker angreb, men efter at h
 
 ## Kilder
 
+
+
+https://support.hypernode.com/knowledgebase/blocking-allowing-ip-addresses-in-nginx/
+
+https://www.cyberciti.biz/faq/linux-unix-nginx-access-control-howto/
+
+https://www.nginx.com/resources/glossary/nginx/ 
+
+https://www.keycdn.com/blog/http-security-headers/
+
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04
+
+https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html 
+
+http://smallbusiness.chron.com/difference-between-internal-external-threats-database-74165.html
+
+https://en.wikipedia.org/wiki/Information_security_audit
+
+https://www.tecmint.com/nginx-web-server-security-hardening-and-performance-tips/ 
+
+https://www.newgenapps.com/blog/internal-and-external-security-threats 
+
