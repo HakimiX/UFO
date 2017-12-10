@@ -160,4 +160,4 @@ Det er svært at forebygge og forhindre ondsindede hacker angreb, men efter at h
 
 ## Kilder
 
-(https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04)
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04
