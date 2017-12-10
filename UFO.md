@@ -29,7 +29,7 @@ __Forudsætninger__
 Ethvert software system fejler et eller andet – og det er bare et spørgsmål om tid, før nogen opdager dem. Hackere udnytter denne sårbarhed ved at skrive kode for at målrette mod et bestemt svagt punkt i dit software system. Store virksomheder har medarbejdere hvis eneste formål er at hacke ind i deres eget produkt, så de kan opdage og rette fejl, før ondsindede hackere kan drage fordel af dem. Derfor anbefaler vi at du opdatere til nyeste version for at sikre hele dit system og ikke kun Nginx. 
 
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/updates.png)
 
 Før du opdatere dit software system er det vigtigt at du laver en backup af hele dit system. På denne måde kan du vende tilbage til din backup, hvis der opstår problemer efter opdateringen. 
 
