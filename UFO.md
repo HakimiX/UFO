@@ -24,12 +24,15 @@ En ud af tre virksomheder oplevede et DDoS angreb i 2017, ifølge en undersøgel
 
 Coreros undersøgelse spurgte også om de nuværende metoder til at håndtering af DDoS-truslen, og her har en tredjedel (30%) svaret at de er afhængige af traditionelle sikkerhedsinfrastrukturprodukter såsom load balancer, IPS og firewalls. Men ifølge Dave Larson som er COO hos Corero, er traditionelle sikkerheds tiltag ikke tilstrækkelige mod DDoS angreb. 
 
+
 > “Those companies are very vulnerable to DDoS attacks because it’s well-documented  that traditional security infrastructure products aren’t sufficient to mitigate DDoS attacks,” said Larson
+
 
 Malware udgøre 10% af alle angreb. Malware er ondsindet software designet til at spionere, stjæle eller skade dit system. Som sagt kan Malware bruges til at stjæle dine besøgendes kundeoplysninger, kreditkort og personlige oplysninger, hvilket resultere i tab af kunder. Coreros research og detekteringsteknologi viser, at cyberkriminelle bruger ”low-level” DDoS angreb som påvirker netværkets ydeevne og samtidig distrahere it-sikkerheds medarbejder så angrebet kan inficere med forskellige former for malware. 
 
 
 > "Such attacks often act as a smokescreen for more malicious attacks. While the network security defenses are degraded, logging tools are overwhelmed and IT teams are distracted, the hackers may be exploiting other vulnerabilities and infecting the environment with various forms of malware." – Corero
+
 
 ## Hvad kan du gøre?
 
