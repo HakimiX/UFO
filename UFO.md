@@ -55,7 +55,7 @@ Apache tilbyder en service som man kan abonnere på, der holder dig orienteret o
 
 __Firewalls__
 
-Firewalls er et godt værktøj til at forhindre simple angreb såsom DDoS. DDoS (Distributed Denial of Service Attack) som derimod er næsten umulig at forhindre, da angrebet benyttes af tusindvis af computere og forbindelser.
+Firewalls er et godt værktøj til at forhindre simple angreb såsom DoS. DDoS (Distributed Denial of Service Attack) som derimod er næsten umulig at forhindre, da angrebet benyttes af tusindvis af computere og forbindelser.
 
 __Log Files__
 
