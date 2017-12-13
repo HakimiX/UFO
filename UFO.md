@@ -63,6 +63,7 @@ Apache har også skrevet om konfigurationsindstillinger der kan hjælpe med at m
 )
 
 ### Nginx Server
+***
 
 Nginx er en web server med fokus på høj parallelitet, ydelse og lavt hukommelsesforbrug. Som standard er Nginx en meget pålidelig og sikker web-server. Der er dog mange måder at sikre Nginx yderligere. Nogle gode metoder til at øge sikkerheden kunne være følgende:
 
