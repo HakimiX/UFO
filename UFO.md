@@ -39,6 +39,7 @@ Malware udgøre 10% af alle angreb. Malware er ondsindet software designet til a
 Ifølge en undersøgelse fra [Netcraft](https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html), som er en betroet udbyder af IT-sikkerhed og Anti-phishing, er Apache og Nginx blandt de mest populære webservere verden over. Undersøgelsen viser at Apache har fået næsten 820 millioner websteder (47%) og Nginx har fået 17 millioner websteder.  Derfor har vi opstillet nogle løsninger til hvordan du kan øge sikkerheden på din Apache- eller Nginx Server. 
 
 ### Apache Server
+***
 
 Apache HTTP Servers har et godt ry for sikkerhed, og et udviklerfælleskab som går en del op i sikkerhedsproblemer. Desværre er det uundgåeligt, at nogle problemer vil blive opdaget i softwaren efter at det er blevet frigivet.
 
