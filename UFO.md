@@ -92,5 +92,5 @@ At begrænse indgående forespørgsler kan være en god ide. Dette kan man konfi
 
 ## Konklusion
 
-Efter at have læst denne artikel håber vi at du har fået et indblik i it-sikkerhed og hvor afgørende en rolle den spiller for virksomhedens økonomi, troværdighed og overlevelse. Ethvert software system har sikkerhedshuller og svagheder, derfor er det vigtigt at du løbende øger sikkerheden ved at opdatere og konfigurere.  
+Efter at have læst denne artikel håber vi at du har fået et indblik i hvor afgørende en rolle sikkerheden i din webserver spiller for virksomhedens økonomi, troværdighed og overlevelse. Ethvert software system har sikkerhedshuller og svagheder, derfor er det vigtigt at du løbende øger sikkerheden ved at opdatere og konfigurere.  
 
