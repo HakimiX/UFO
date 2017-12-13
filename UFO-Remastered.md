@@ -1,4 +1,4 @@
-# Er web-server sikkerhed vigtigt?
+# Er webserver sikkerhed vigtigt?
 
 ## Introduktion
 
@@ -14,7 +14,7 @@ Webserveren og ethvert netværk der er forbundet til den er desværre udsat for 
 
 Nedenstående er top 8 netværks angreb efter typer, der er optaget fra april til juni 2017, og offentliggjort i en rapport fra McAfee Labs fra september 2017. [McAfee Labs](https://www.mcafee.com/us/mcafee-labs.aspx) er trusselforskningsafdelingen fra [McAfee](https://www.mcafee.com/uk/index.html), som er en af verdens førende kilder til trusselforskning og cybersecurity. Rapporten er baseret på data indsamlet fra millioner af sensorer, der forvaltes af McAfee. Sensorerne har til formål at levere real-time trussel intelligens. 
 
-![Text](https://github.com/HakimiX/UFO/blob/master/Models/nginx.png)
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/webattacks.jpg)
 
 Ud fra den indsamlede data kan vi se at browserbaserede netværksangreb udgøre 20%. De ondsindede hacker forsøger at bryde en maskine gennem en webbrowser. Disse angreb starter ofte på sårbare hjemmesider med dårlig eller ingen sikkerhed. Hackerne får adgang til webserveren og inficere med malware, der spreder sig som influenza. 
 
