@@ -1,5 +1,7 @@
 # Hvor sikker er din Webserver?
 
+_Skrevet af Mustafa & Kevin_
+
 ## Introduktion
 
 Din hjemmeside er dit brand og ofte den første kontakt med kunderne. Hvis hjemmesiden ikke er sikker, kan dine forretningsforbindelser bliver kompromitteret og have stor indflydelse på kundernes tillid. Truslerne kan komme i mange forskellige former og inficere din hjemmeside med malware for at sprede endnu mere malware til de besøgende på hjemmesiden. De kan stjæle de besøgendes kundeoplysninger, kreditkort, personlige oplysninger og endda forårsage nedbrud af hele din hjemmeside. En enkelt sikkerhedsbrud kan være altafgørende for en lille virksomhed. 
