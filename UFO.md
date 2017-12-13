@@ -43,7 +43,7 @@ Ifølge en undersøgelse fra [Netcraft](https://news.netcraft.com/archives/2017/
 
 Apache HTTP Servers har et godt ry for sikkerhed, og et udviklerfælleskab som går en del op i sikkerhedsproblemer. Desværre er det uundgåeligt, at nogle problemer vil blive opdaget i softwaren efter at det er blevet frigivet.
 
-Alle netværksservere kan være underlagt DDoS angreb (Denial of service attacks), som gør at serveren overbelastes i sådan en grad at reelle forespørgsler til serveren ikke kan besvares i tide. Det er næsten umuligt, at forhindre sådanne angreb, men der er visse ting man kan gøre for, at øge sikkerheden for DoS angreb. 
+Alle netværksservere kan være underlagt DDoS angreb (Denial of service attacks), som gør at serveren overbelastes i sådan en grad at reelle forespørgsler til serveren ikke kan besvares i tide. Det er næsten umuligt, at forhindre sådanne angreb, men der er visse ting man kan gøre for, at øge sikkerheden for DDoS angreb. 
 
 Ofte er de mest effektive anti-DDoS værktøj en firewall. De fleste firewalls kan f.eks. konfigureres til at begrænse antallet af samtidige connections fra en hvilken som helst individuel IP-adresse eller netværk. Dette forhindrer en række simple angreb.
 
