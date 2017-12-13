@@ -1,188 +1,87 @@
-# 4 simple måder at øge sikkerheden på din Nginx Server
+# Er webserver sikkerhed vigtigt?
 
-_Skrevet af Kevin Turan & Mustafa Hakimi_
+## Introduktion
 
-## Hvad er Nginx
+Din hjemmeside er dit brand og ofte den første kontakt med kunderne. Hvis hjemmesiden ikke er sikker, kan dine forretningsforbindelser bliver kompromitteret og have stor indflydelse på kundernes tillid. Truslerne kan komme i mange forskellige former og inficere din hjemmeside med malware for at sprede endnu mere malware til de besøgende på hjemmesiden. De kan stjæle de besøgendes kundeoplysninger, kreditkort, personlige oplysninger og endda forårsage nedbrud af hele din hjemmeside. En enkelt sikkerhedsbrud kan være altafgørende for en lille virksomhed. 
 
-Nginx er en kraftfuld open source software til Web Serving, Load Balancing, Media Streaming, Caching og meget mere. Nginx startede som en web-server designet til maksimal stabilitet og ydeevne. Ud over sine HTTP-serverfunktioner kan Nginx også fungere som en proxyserver til e-mail (IMAP, POP3 og SMTP) og en Load Balancer og reverse proxy til HTTP- og TCP-servere. 
+Jo mere en lille virksomhed kan gøre for at opbygge sikkerheden på deres hjemmeside, desto mere sandsynligt er det at kunderne besøger, køber, bliver og anbefaler. Det giver kunderne sikkerhed for at hjemmesiden er sikker, og at virksomheden er opmærksom på risiciene. Derfor er sikkerhed vigtigt!  
 
-![Text](https://github.com/HakimiX/UFO/blob/master/Models/nginx.png)
+## Webserver Sikkerhed
 
+Webserveren er en vigtig del a web-baserede applikationer og spiller en afgørende rolle i din hjemmesides sikkerhed. En sikker webserver er fundamentet for beskyttelse af dine webapplikationer, filer og data. Det ligegyldigt om du driver en stor virksomhed eller lille virksomhed – det er under alle omstændigheder vigtigt at du beskytter din webserver da hele netværket og virksomheden er afhængig af den. 
 
-Nginx blev oprindeligt udviklet til at være den hurtigste webserver, og dette formål er stadig et centralt mål for Nginx. Den slår Apache og andre server i benchmarks der måler web-serverens ydeevne. 
+Webserveren og ethvert netværk der er forbundet til den er desværre udsat for alvorlige sikkerhedsrisici. Web serveren er et vindue mellem verden og dit netværk. Din indsats på servervedligeholdelse afgøre størrelsen på vinduet, men du kan aldrig lukke vinduet helt, da intet software system er fejlfrit. 
 
+Nedenstående er top 8 netværks angreb efter typer, der er optaget fra april til juni 2017, og offentliggjort i en rapport fra McAfee Labs fra september 2017. [McAfee Labs](https://www.mcafee.com/us/mcafee-labs.aspx) er trusselforskningsafdelingen fra [McAfee](https://www.mcafee.com/uk/index.html), som er en af verdens førende kilder til trusselforskning og cybersecurity. Rapporten er baseret på data indsamlet fra millioner af sensorer, der forvaltes af McAfee. Sensorerne har til formål at levere real-time trussel intelligens. 
 
-Web-server softwaren er indgangen til en server, derfor er web-serveren også det vigtigste mål for hackere, så de kan stjæle dine data og andre vigtige informationer. Som standard er Nginx en meget pålidelig og sikker web-server. Der er dog mange måder at sikre Nginx yderligere. 
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/webattacks.jpg)
 
+Ud fra den indsamlede data kan vi se at browserbaserede netværksangreb udgøre 20%. De ondsindede hacker forsøger at bryde en maskine gennem en webbrowser. Disse angreb starter ofte på sårbare hjemmesider med dårlig eller ingen sikkerhed. Hackerne får adgang til webserveren og inficere med malware, der spreder sig som influenza. 
 
-Vi er godt klar over at det kan være svært at forbygge eller forhindre hacker angreb, derfor har vi opstillet 4 simple måder at øge sikkerheden på en Nginx web-server, ved at gøre brug af Nginx sikkerhedshærdningsprocess og sikkerhedsstandarder. Du vil lære hvordan man:
-* Opdatere alt software 
-* Forebygger informations lækage 
-* Begrænser adgang via IP
-* Udføre en sikkerhedsrevision
+Derudover kan vi se at Denial-of-Service (DDoS) angreb udgøre 15%. Denne form for angreb har til formål at nedbryde dit system ved at overvælde din webserver med trafik. Hvad er den mest skadelige konsekvens af DDoS-angreb på din virksomhed? Ifølge IT sikkerheds professionelle og netværksoperatører er det tab af kundernes tillid. En [undersøgelse](https://www.corero.com/company/newsroom/press-releases/loss-of-customer-trust-and-decreased-revenues-most-damaging-consequences-of-ddos-attacks-according-to-it-security-pros-and-network-operators/) fra Corero, som er en anerkendt DDoS sikkerheds udbyder, viser at næsten 45% af de IT sikkerhedsprofessionelle har sagt at den største konsekvens er tab af kunderens tillid og 34% har svaret tab af indtægter
 
-__Forudsætninger__
-* Ubuntu 14.04 Server 
-* Nginx web-server installeret og konfigureret 
-* En domæne der peger på din server 
+En ud af tre virksomheder oplevede et DDoS angreb i 2017, ifølge en undersøgelse fra Kaspersky Labs. Kaspersky Labs er trusselforskningsafdelingen fra [Kaspersky](https://www.kaspersky.dk/), som har udviklet [prisvindene](https://www.kaspersky.com/about/awards) sikkerhedsteknologier. Ca. En tredjedel af respondenterne i Coreros [undersøgelse](https://www.corero.com/company/newsroom/press-releases/loss-of-customer-trust-and-decreased-revenues-most-damaging-consequences-of-ddos-attacks-according-to-it-security-pros-and-network-operators/) har svaret at DDoS-angreb på deres netværk forekommer ugentligt eller endda dagligt. DDoS vokser i hyppighed og kompleksitet, derfor er det vigtigt at din webserver er forbygget mod denne form for trussel. 
 
-## Step 1 - Opdater alt software 
+Coreros undersøgelse spurgte også om de nuværende metoder til at håndtering af DDoS-truslen, og her har en tredjedel (30%) svaret at de er afhængige af traditionelle sikkerhedsinfrastrukturprodukter såsom load balancer, IPS og firewalls. Men ifølge Dave Larson som er COO hos Corero, er traditionelle sikkerheds tiltag ikke tilstrækkelige mod DDoS angreb. 
 
-Ethvert software system fejler et eller andet – og det er bare et spørgsmål om tid, før nogen opdager dem. Hackere udnytter denne sårbarhed ved at skrive kode for at målrette mod et bestemt svagt punkt i dit software system. Store virksomheder har medarbejdere hvis eneste formål er at hacke ind i deres eget produkt, så de kan opdage og rette fejl, før ondsindede hackere kan drage fordel af dem. Derfor anbefaler vi at du opdatere til nyeste version for at sikre hele dit system og ikke kun Nginx. 
+> “Those companies are very vulnerable to DDoS attacks because it’s well-documented  that traditional security infrastructure products aren’t sufficient to mitigate DDoS attacks,” said Larson
 
+Malware udgøre 10% af alle angreb. Malware er ondsindet software designet til at spionere, stjæle eller skade dit system. Som sagt kan Malware bruges til at stjæle dine besøgendes kundeoplysninger, kreditkort og personlige oplysninger, hvilket resultere i tab af kunder. Coreros research og detekteringsteknologi viser, at cyberkriminelle bruger ”low-level” DDoS angreb som påvirker netværkets ydeevne og samtidig distrahere it-sikkerheds medarbejder så angrebet kan inficere med forskellige former for malware. 
 
-![Text](https://github.com/HakimiX/UFO/blob/master/Models/updates.png)
 
-Før du opdatere dit software system er det vigtigt at du laver en backup af hele dit system. På denne måde kan du vende tilbage til din backup, hvis der opstår problemer efter opdateringen. 
+> "Such attacks often act as a smokescreen for more malicious attacks. While the network security defenses are degraded, logging tools are overwhelmed and IT teams are distracted, the hackers may be exploiting other vulnerabilities and infecting the environment with various forms of malware." – Corero
 
-For at opdatere hele dit software system og alle tilhørende packages og afhængigheder, skal du køre nedestående kommando: 
+## Hvad kan du gøre?
 
-```
-$ sudo apt-get update && sudo apt-get upgrade
-```
+Ifølge en undersøgelse fra [Netcraft](https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html), som er en betroet udbyder af IT-sikkerhed og Anti-phishing, er Apache og Nginx blandt de mest populære webservere verden over. Undersøgelsen viser at Apache har fået næsten 820 millioner websteder (47%) og Nginx har fået 17 millioner websteder.  Derfor har vi opstillet nogle løsninger til hvordan du kan øge sikkerheden på din Apache- eller Nginx Server. 
 
-## Step 2 - Forebyg informations lækage 
+### Apache Server
 
-Der er 2 måder hvorpå information kan offentliggøres: Internt og eksternt. En intern offentliggørelse er eksempelvis, når en medarbejder gør privat information offentlig. Dette kunne ske som følge af manglende forståelse for informationernes følsomhed eller uforsigtighed. 
+Apache HTTP Servers har et godt ry for sikkerhed, og et udviklerfælleskab som går en del op i sikkerhedsproblemer. Desværre er det uundgåeligt, at nogle problemer vil blive opdaget i softwaren efter at det er blevet frigivet.
 
-En ekstern offentliggørelse finder sted, når en person uden for organisationen får adgang til dit software system og offentliggøre information på websteder. Du skal være forberedt på begge typer trusler, men vi vil fokusere på ekstern offentliggørelse. 
+Alle netværksservere kan være underlagt DDoS angreb (Denial of service attacks), som gør at serveren overbelastes i sådan en grad at reelle forespørgsler til serveren ikke kan besvares i tide. Det er næsten umuligt, at forhindre sådanne angreb, men der er visse ting man kan gøre for, at øge sikkerheden for DoS angreb. 
 
-For at forhindre at web-server informationer bliver offentliggjort, skal vi begynde med sikkerhedshærdningsprocessen. 
+Ofte er de mest effektive anti-DDoS værktøj en firewall. De fleste firewalls kan f.eks. konfigureres til at begrænse antallet af samtidige connections fra en hvilken som helst individuel IP-adresse eller netværk. Dette forhindrer en række simple angreb.
 
-Når en web browser opstiller en forespørgsel til en side fra en web-server, svarere serveren med indholdet samt en HTTP Response Header. Nogle af disse HTTP Header indeholder metadata, såsom HTTP status koder, Request metoder og andre relevante informationer vedrørende vores operative system. Ved at skrive `curl –I http://localhost` kan du se et eksempel på dette. 
+__Abonnere på Apache HTTP Server Announcements List__
 
-```
-HTTP/1.1 200 OK
+Apache tilbyder en service som man kan abonnere på, der holder dig orienteret om nye udgivelser og sikkerhedsopdateringer. På denne måde kan du være sikker på at have de nyeste opdateringer hele tiden. [Reference](http://httpd.apache.org/lists.html#http-announce)
 
-Server: nginx/1.3.6 (Ubuntu)
-```
+__Firewalls__
 
-Ovenstående output viser navnet på vores operative system og versionen på vores Nginx web-server. Ondsindede hackere kan bruge denne information til at undersøge vores operative system og planlægge deres angreb. Derfor er det vigtigt at vi konfigurere vores Nginx, så disse oplysninger ikke offentliggøres
+Firewalls er et godt værktøj til at forhindre simple angreb såsom DDoS. DDoS (Distributed Denial of Service Attack) som derimod er næsten umulig at forhindre, da angrebet benyttes af tusindvis af computere og forbindelser.
 
-Start med at navigere hen til din Nginx konfiguration som ligger i følgende sti: `/etc/nginx/nginx.conf/`.Herefter kan du gøre brug af nedenstående kommando til at åbne Nano editor, så du kan skrive i filen. 
+__Log Files__
 
-```
-$ sudo nano /etc/nginx/nginx.conf
-```
+Det er altid en god ide, at holde øje med dine log files, så du har et overblik over hvad der rent faktisk sker mod din server. Det er dog ikke en måde, at forhindre angreb,men det er et godt værktøj til at finde ud af hvilke angreb der har været rettet mod din server.
 
-Find HTTP konfigurationen og tilføj følgende linje kode: `server_tokens off;`. Afslut med at gemme og forlade filen. HTTP konfigurationen bør se således ud: 
+Apache har også skrevet om konfigurationsindstillinger der kan hjælpe med at mildne diverse problemer, som kan findes på deres [side](https://httpd.apache.org/docs/2.4/misc/security_tips.html
+)
 
-```
-http {
-    server_tokens off;
-}
-```
+### Nginx Server
 
-For at ændringerne træder i kraft, skal du genindlæse Nginx ved at skrive nedenstående kommando: 
+Nginx er en web server med fokus på høj parallelitet, ydelse og lavt hukommelsesforbrug. Som standard er Nginx en meget pålidelig og sikker web-server. Der er dog mange måder at sikre Nginx yderligere. Nogle gode metoder til at øge sikkerheden kunne være følgende:
 
-```
-$ sudo service nginx reload 
-```
+__Opdateringer__
 
-Vores HTTP Header viser ingen information vedrørende vores operative system efter at ændringerne er trådt i kraft. Skriv `curl –I http://localhost` for at få nedenstående output. 
+Sørg for at have de nyeste opdateringer hele tiden, da næsten hver opdatering handler om sikkerhed.
 
-```
-HTTP/1.1 200 OK
-Server: nginx
-```
+__SSL Certificate__
 
-Ud over vores server HTTP Header er der en anden Header der også indeholder følsom information, fordi den viser version af PHP og andre informationer vedrørende Nginx. 
+Det er en god ide at have SSL implementeret så man kan få adgang til web applikationen med HTTPS og tilføje yderligere krypterings kommunikation.
 
+__HTTP Methods__
 
-```
-HTTP/1.1 200 OK
-Server: nginx
+I fleste tilfælde behøver man kun `GET`, `HEAD` & `POST` HTTP anmodninger i din webapplikation. Hvis man tillader `TRACE` eller `DELETE` kan det være risikabelt, fordi det kan tillade cross-site tracking angreb, hvilket kan gøre at hackere kan stjæle cookie oplysninger.
 
-X-Powered-By: PHP/7.1-1ubuntu4.14
-```
+__IP Restriction__
 
-Hackere kan drage fordel af denne information ved at undersøge allerede eksisterende sikkerhedshuller i de versioner vi har installeret på vores system. Det er vigtigt at skjule disse oplysninger, og dette gøres ved at skrive `expose_php off` i din `php.ini` fil. 
+Det kan være en god ide, slå IP restriction til via Nginx configuration, så du kun tillader betroede IP-adresser at have adgang til eksempelvis admin page.
 
-Næste vigtige ændringer er vores ”error pages”, såsom `401`, `403` og `404`. For at ændre disse skal du navigere til denne sti: `/etc/nginx/sites-enabled/defualt`. Herefter skal du tilføje følgende linje kode i server konfigurationen. 
+__Begrænsning af Forbindelser__
 
-```
-server {
-    error_page 401 403 404 /404.html;
-}
-```
+Nginx er god til at håndtere mange samtidige forbindelser end backend-servere. Derfor kan man begrænse antallet af forbindelser til hver backend-server. For eksempel, kan man via configuration, begrænse forbindelser. Du kan selv bestemme hvor mange forbindelser hver backend-server i din website upstream skal etablere. [Reference](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
 
-For at ændringerne træder i kraft, skal du genindlæse Nginx ved at skrive nedenstående kommando: 
+__Begrænsning af Requests__
 
-```
-$ sudo service nginx reload 
-```
-
-### Step 3 - IP Begrænsning 
-
-Sikkerhed handler ikke altid om, at have lange og komplicerede passwords. Man skal også prøve at holde de følsomme områder af sin webside væk fra ondsindede hackere. 
-
-De sårbare områder såsom admin pages, CPanel og andre sider kan nemt tilgås og udnyttes af hackere for at få adgang til din webside. Hvis man har en svag adgangskode, kan adgangskoden nemt knækkes af hackere, som har en del værktøjer til at knække koder. Dette kunne være et brute force angreb, hvor hackerne prøver at knække adgangskoden, ved at der afprøves forskellige kode kombinationer indtil den rigtige kode er fundet. Der er en del værktøjer, som hackere gøre brug af for at udføre et brute force angreb, Hydra er det mest kendte og effektive værktøj. 
-
-Udover at kunne oprette en lang og kompliceret kode som både indeholder tal, små-, store bogstaver, og tegn kan man også begrænse IP addresser for at få adgang til den specifikke side man vil beskytte.
-
-Man kan angive de betroede IP addresser som eksempelvis din egen eller andre administratorer der skal kunne tilgå siden og have adgang. Her kan man så blokere alle andre IP’er fra at få adgang til siden. Dette medførere at din admin page kun kan tilgås fra de IP addresser du stoler på og kender.
-
-Du kan tilføje og fjerne IP addresser ved at aktivere IP Restriction via Nginx configuration. Dette gøres ved at åbne Nginx configiration:
-
-```
-$ sudo nano /etc/nginx/sites-enabled/default
-```
-
-Herefter skal man kigge på server konfigurations delen:
-
-```
-server {
-
-    location /wp-admin/ {
-        allow 192.143.1.2/24;
-        allow 10.2.0.1/24;
-        deny all;
-    }
-}
-```
-
-Her har vi et eksempel på en location som er wp-admin siden. Her kan du så tilføje, redigere og fjerne alle de IP addresser der skal kunne tilgå siden. 
-
-For at ændringerne træder i kraft, skal du genindlæse Nginx ved at skrive nedenstående kommando: 
-
-```
-$ sudo service nginx reload 
-```
-
-Når man nu prøver at tilgå admin page fra en IP addresse som ikke er iblandt IP Adresserne der skal have adgang, vil man få en `402 forbidden error`. 
-
-## Step 4 - Sikkerhedsrevision
-
-Vi anbefaler at du laver en sikkerhedsrevision, som er en systematisk evaluering af sikkerheden i dit software system, ved at måle hvor godt det er i overensstemmelse med et sæt af allerede etablerede kriterier. Det er ikke muligt at finde alle sikkerhedshuller og svagheder manuelt, derfor anbefaler vi tredjeparts værktøjer såsom Internal Audit software, Maltego, Metasploit osv. 
-
-## Konklusion
-
-Det er svært at forebygge og forhindre ondsindede hacker angreb, men efter at have læst denne artikel håber vi at du føler dig mere sikker når det kommer til sikkerheden i Nginx. Som sagt har ethvert software system sikkerhedshuller og svagheder, derfor er det vigtigt at du løbende øger sikkerheden ved at opdatere og konfigurere.  
-
-
-## Kilder
-
-
-
-https://support.hypernode.com/knowledgebase/blocking-allowing-ip-addresses-in-nginx/
-
-https://www.cyberciti.biz/faq/linux-unix-nginx-access-control-howto/
-
-https://www.nginx.com/resources/glossary/nginx/ 
-
-https://www.keycdn.com/blog/http-security-headers/
-
-https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-on-ubuntu-14-04
-
-https://www.upguard.com/articles/10-tips-for-securing-your-nginx-deployment 
-
-https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html 
-
-http://smallbusiness.chron.com/difference-between-internal-external-threats-database-74165.html
-
-https://en.wikipedia.org/wiki/Information_security_audit
-
-https://www.tecmint.com/nginx-web-server-security-hardening-and-performance-tips/ 
-
-https://www.newgenapps.com/blog/internal-and-external-security-threats 
-
+At begrænse indgående forespørgsler kan være en god ide. Dette kan man konfigurere i Nginx for at tillade en enkelt klients IP-adresse kan prøve at logge ind kun hvert 2 sekund, dette svarer til 30 requests per minut. [Reference](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
