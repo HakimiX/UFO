@@ -88,3 +88,9 @@ Nginx er god til at håndtere mange samtidige forbindelser end backend-servere. 
 __Begrænsning af Requests__
 
 At begrænse indgående forespørgsler kan være en god ide. Dette kan man konfigurere i Nginx for at tillade en enkelt klients IP-adresse kan prøve at logge ind kun hvert 2 sekund, dette svarer til 30 requests per minut. [Reference](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
+
+
+## Konklusion
+
+Efter at have læst denne artikel håber vi at du har fået et indblik i it-sikkerhed og hvor afgørende en rolle den spiller for virksomhedens økonomi, troværdighed og overlevelse. Ethvert software system har sikkerhedshuller og svagheder, derfor er det vigtigt at du løbende øger sikkerheden ved at opdatere og konfigurere.  
+
