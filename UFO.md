@@ -82,7 +82,9 @@ __IP Restriction__
 Det kan være en god ide, slå IP restriction til via Nginx configuration, så du kun tillader betroede IP-adresser at have adgang til eksempelvis admin page. [Reference](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
 __Begrænsning af Forbindelser__
+
 Nginx er god til at håndtere mange samtidige forbindelser end backend-servere. Derfor kan man begrænse antallet af forbindelser til hver backend-server. For eksempel, kan man via configuration, begrænse forbindelser. Du kan selv bestemme hvor mange forbindelser hver backend-server i din website upstream skal etablere. [Reference](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
+
 __Begrænsning af Requests__
 
 At begrænse indgående forespørgsler kan være en god ide. Dette kan man konfigurere i Nginx for at tillade en enkelt klients IP-adresse kan prøve at logge ind kun hvert 2 sekund, dette svarer til 30 requests per minut. [Reference](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
