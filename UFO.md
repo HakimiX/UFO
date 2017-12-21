@@ -56,6 +56,7 @@ Vi har også udført et DoS-angreb (Denial-of-service-attack) mod webserveren vh
 ![Text](https://github.com/HakimiX/UFO/blob/master/Models/hpin3result.jpg)
 
 
+Truslerne kan som sagt komme i mange forskellige former og ovenstående eksempler er blot en advarsel til dig, så du kan indse hvor nemt det er at få adgang til følsomme oplysninger. Så snart de ondsindede hackere har adgang til din webserver er dine kunders oplysninger udsat, og det kan have store konsekvenser for dig og din virksomhed. Der er mange fordele ved at øge sikkerheden på din webserver, herunder at dine kunder har tillid til din hjemmeside og føler sig tryg når de eksempelvis handler online. Din webserver sikkerhed kan også have indflydelse på din hjemmesides søgeoptimering. Google har nemlig meldt ud at de vil rangere krypterede (HTTPS) sider højere i søgeresultater netop for at eliminere nogle at de sikkerhedsrisici som ubeskyttede webservere udgøre. HTTPS benyttes på sider hvor der foretages udveksling af fortrolige oplysninger som kundeoplysninger, kreditkortsoplysninger osv. [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). 
 
 
 
