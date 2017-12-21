@@ -59,7 +59,21 @@ Vi har også udført et DoS-angreb (Denial-of-service-attack) mod webserveren vh
 Truslerne kan som sagt komme i mange forskellige former og ovenstående eksempler er blot en advarsel til dig, så du kan indse hvor nemt det er at få adgang til følsomme oplysninger. Så snart de ondsindede hackere har adgang til din webserver, er dine kunders oplysninger udsat, og det kan have store konsekvenser for dig og din virksomhed. Der er mange fordele ved at øge sikkerheden på din webserver, herunder at dine kunder har tillid til din hjemmeside og føler sig tryg når de eksempelvis handler online. Din webserver sikkerhed kan også have indflydelse på din hjemmesides søgeoptimering. Google har nemlig meldt ud at de vil rangere krypterede (HTTPS) sider højere i søgeresultater bl.a. for at eliminere nogle af de sikkerhedsrisici som ubeskyttede webservere udgøre. HTTPS benyttes på sider hvor der foretages udveksling af fortrolige oplysninger såsom kundeoplysninger,   transaktionsoplysninger og kreditkortsoplysninger. [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). 
 
 
-## Sikkerhedstest
+## OWASP ZAP Sikkerhedstest
+
+En sikkerhedstest analysere din hjemmesides kode og hvordan den interagere med andre objekter for at identificere svagheder eller fejl, så vi kan forhindre at ondsindede hackere ikke får uautoriseret adgang til webserver eller andre netværk tilknyttet vores webserver. Vi har gjort brug af OWASP Zed Attack Proxy (ZAP) sikkerhedsværktøj til finde sikkerhedsfejl i vores Hackernews applikation. Nedenstående er en demonstration af OWASP ZAP Scan af vores system - `165.227.136.184`
+
+![Text]()
+
+I OWASP’s brugergrænseflade kan vi se at vores applikation er udsat for ”Clickjacking” angreb. Clickjacking angreb er når en hacker benytter gennemsigtige eller uigennemsigtige lag til at narre brugere til at klikke på et link eller en knap på en anden side, selvom brugerens hensigt var at klikke på øverste lag. 
+
+> ”X-Frame-Options header is not included in the HTTP response to protect against Clickjacking attacks” - OWASP ZAP
+
+![Text]()
+
+OWASP gør os opmærksom på at vores web browser XSS beskyttelse ikke er aktiveret. HTTP XXS beskyttelses response header er en funktion af Chrome og Safari, der har til formål at stoppe sider der indlæses med reflekterede XXS angreb (Cross-site scripting). Cross-site scripting er når en hacker påfører din hjemmeside ondsindede scripts. Via din hjemmeside kan en hacker påfører ondsindede scripts til dine kunders browser.  
+
+> ”Web Browser XSS Protection is not enabled, or is disabled by the configuration of the X-XSS-Protection http response header on the web server” - OWASP ZAP
 
 
 
