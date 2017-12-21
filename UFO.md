@@ -43,17 +43,17 @@ I denne gennemgang gøre vi brug af Kali Linux som gør hacking meget lettere. [
 
 Vi starter med at ”Stealth Scan” Hackernews siden som ligger på følgende adresse: 165.227.136.184. Stealth Scanning er en velkendt måde til at opdage kommunikationskanaler og udnyttet dem. Et virkeligt eksempel på Stealth Scanning kunne være, at gå op til en lejlighedsbygning og banke på hver dør for at se, hvem der er hjemme. Stealth Scanning stiller eksempelvis følgende spørgsmål til webserveren: hvilken webserver kørere du? Bruger du en mail server? Bruger du Telnet, FTP eller RCP? Webserveren afslører desværre mange af disse informationer og det tillader en uberettiget besøgende at få uautoriseret adgang til webserveren. Vi har gjort brug af værktøjet [NMAP](https://nmap.org/) til at få adgang til følsomme oplysninger. Vi kan se hvilken webserver der er brugt og hvilke TCP og HTTP porte der er åbne og tilgængelige. Kali Linux Terminal Kommando - `nmap -v 165.227.136.184`
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/StealthScanPorts.jpg)
 
 Derudover kan vi få adgang til SSH-Host Key. Hver computer har en unik Host Key, som er en kryptografisk nøgle, der bruges til at godkende computere. Deling af SSH-Host Key er ikke anbefalet da det kan resultere i sårbarhed over for en ”Man-in-the-Middle” (MITM) angreb. [Man-in-the-middle]( https://www.ssh.com/attack/man-in-the-middle) er et angreb mod en kryptografisk protokol så hackeren kan forhandle forskellige kryptografiske parametre med webserveren og klienten. Kali Linux Terminal Kommando - `nmap –A 165.227.136.184`. 
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/StealthScanSSH.jpg)
 
 Vi har også udført et DoS-angreb (Denial-of-service-attack) mod webserveren vha. værktøjerne Scatter og [Hping3](https://tools.kali.org/information-gathering/hping3). Formålet med et DoS angreb er at gøre webserveren utilgængelig for sine tilsigtede brugere ved at overbelaste den med trafik. DoS-angrebet medførte at Hackernews siden blev en del langsommere og reagerede ikke til nogle anmodninger. Kali Linux Terminal Kommando - `hping3 – S –V –flood –rand-source 165.227.136.184`.
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/hping3.jpg)
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/hpin3result.jpg)
 
 
 
