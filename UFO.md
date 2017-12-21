@@ -35,6 +35,7 @@ Malware udgøre 10% af alle angreb. Malware er ondsindet software designet til a
 
 > "Such attacks often act as a smokescreen for more malicious attacks. While the network security defenses are degraded, logging tools are overwhelmed and IT teams are distracted, the hackers may be exploiting other vulnerabilities and infecting the environment with various forms of malware." – Corero
 
+
 ## Hvor nemt et det egentlig at få adgang til følsomme oplysninger?
 
 Når man vil angribe en webserver, ønsker man normalt at få adgang og kunne styre webserveren så man kan downloade fortrolige oplysninger og udnytte det yderligere ved at sprede Malware. Nedenstående demonstrere hvor nemt det faktisk er at få adgang til følsom data på vores Hackernews webserver. 
@@ -52,7 +53,6 @@ Derudover kan vi få adgang til SSH-Host Key. Hver computer har en unik Host Key
 Vi har også udført et DoS-angreb (Denial-of-service-attack) mod webserveren vha. værktøjerne Scatter og [Hping3](https://tools.kali.org/information-gathering/hping3). Formålet med et DoS angreb er at gøre webserveren utilgængelig for sine tilsigtede brugere ved at overbelaste den med trafik. DoS-angrebet medførte at Hackernews siden blev en del langsommere og reagerede ikke til nogle anmodninger. Kali Linux Terminal Kommando - `hping3 – S –V –flood –rand-source 165.227.136.184`.
 
 ![Text](https://github.com/HakimiX/UFO/blob/master/Models/hping3.jpg)
-
 ![Text](https://github.com/HakimiX/UFO/blob/master/Models/hpin3result.jpg)
 
 
