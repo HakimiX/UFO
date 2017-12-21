@@ -63,13 +63,13 @@ Truslerne kan som sagt komme i mange forskellige former og ovenstående eksemple
 
 En sikkerhedstest analysere din hjemmesides kode og hvordan den interagere med andre objekter for at identificere svagheder eller fejl, så vi kan forhindre at ondsindede hackere ikke får uautoriseret adgang til webserver eller andre netværk tilknyttet vores webserver. Vi har gjort brug af OWASP Zed Attack Proxy (ZAP) sikkerhedsværktøj til finde sikkerhedsfejl i vores Hackernews applikation. Nedenstående er en demonstration af OWASP ZAP Scan af vores system - `165.227.136.184`
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/OWASP2.jpg)
 
 I OWASP’s brugergrænseflade kan vi se at vores applikation er udsat for ”Clickjacking” angreb. Clickjacking angreb er når en hacker benytter gennemsigtige eller uigennemsigtige lag til at narre brugere til at klikke på et link eller en knap på en anden side, selvom brugerens hensigt var at klikke på øverste lag. 
 
 > ”X-Frame-Options header is not included in the HTTP response to protect against Clickjacking attacks” - OWASP ZAP
 
-![Text]()
+![Text](https://github.com/HakimiX/UFO/blob/master/Models/OWASP1.jpg)
 
 OWASP gør os opmærksom på at vores web browser XSS beskyttelse ikke er aktiveret. HTTP XXS beskyttelses response header er en funktion af Chrome og Safari, der har til formål at stoppe sider der indlæses med reflekterede XXS angreb (Cross-site scripting). Cross-site scripting er når en hacker påfører din hjemmeside ondsindede scripts. Via din hjemmeside kan en hacker påfører ondsindede scripts til dine kunders browser.  
 
