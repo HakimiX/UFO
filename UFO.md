@@ -65,13 +65,13 @@ En sikkerhedstest analysere din hjemmesides kode og hvordan den interagere med a
 
 ![Text](https://github.com/HakimiX/UFO/blob/master/Models/OWASP2.jpg)
 
-I OWASP’s brugergrænseflade kan vi se at vores applikation er udsat for ”Clickjacking” angreb. Clickjacking angreb er når en hacker benytter gennemsigtige eller uigennemsigtige lag til at narre brugere til at klikke på et link eller en knap på en anden side, selvom brugerens hensigt var at klikke på øverste lag. 
+I OWASP’s brugergrænsefladen kan vi se at vores applikation er udsat for ”Clickjacking” angreb. Clickjacking angreb er når en hacker benytter gennemsigtige eller uigennemsigtige lag til at narre brugere til at klikke på et link eller en knap på en anden side, selvom brugerens hensigt var at klikke på øverste lag. 
 
 > ”X-Frame-Options header is not included in the HTTP response to protect against Clickjacking attacks” - OWASP ZAP
 
 ![Text](https://github.com/HakimiX/UFO/blob/master/Models/OWASP1.jpg)
 
-OWASP gør os opmærksom på at vores web browser XSS beskyttelse ikke er aktiveret. HTTP XXS beskyttelses response header er en funktion af Chrome og Safari, der har til formål at stoppe sider der indlæses med reflekterede XXS angreb (Cross-site scripting). Cross-site scripting er når en hacker påfører din hjemmeside ondsindede scripts. Via din hjemmeside kan en hacker påfører ondsindede scripts til dine kunders browser.  
+OWASP gør os opmærksom på at vores web browser XSS beskyttelse ikke er aktiveret. HTTP XXS beskyttelses response header er en funktion af Chrome og Safari, der har til formål at stoppe sider der indlæses med reflekterende XXS angreb (Cross-site scripting). Cross-site scripting er når en hacker påfører din hjemmeside ondsindede scripts. Via din hjemmeside kan en hacker påfører ondsindede scripts til dine kunders browser.  
 
 > ”Web Browser XSS Protection is not enabled, or is disabled by the configuration of the X-XSS-Protection http response header on the web server” - OWASP ZAP
 
