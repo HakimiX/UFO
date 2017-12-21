@@ -1,6 +1,6 @@
 # Hvor sikker er din Webserver?
 
-_Skrevet af Mustafa & Kevin_
+_Skrevet af Mustafa Hakimi & Kevin Turan_
 
 ## Introduktion
 
